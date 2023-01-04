@@ -8,13 +8,13 @@ import (
 	"io"
 )
 
-func Chipper_key(key string) error {
+func Chipper_key(key string) (cipher.Block, error) {
 	block, err := aes.NewCipher([]byte(key))
 	if err != nil {
 		//fmt.Println(err)
-		return err
+		return block, err
 	}
-	return nil
+	return block, nil
 }
 func Encrypt(b cipher.Block, plaintext []byte) []byte {
 	if mod := len(plaintext) % aes.BlockSize; mod != 0 {
