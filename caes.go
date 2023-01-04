@@ -8,7 +8,7 @@ import (
 	"io"
 )
 
-func Chipper_key(key string) {
+func Chipper_key(key string) error {
 	block, err := aes.NewCipher([]byte(key))
 	if err != nil {
 		//fmt.Println(err)
