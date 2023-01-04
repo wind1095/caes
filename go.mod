@@ -1,3 +1,3 @@
-module github.com/wind1095/caes
+module caes
 
 go 1.17
